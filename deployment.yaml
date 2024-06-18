@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backendapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backendapi
+  template:
+    metadata:
+      labels:
+        app: backendapi
+    spec:
+      containers:
+      - name: backendapi
+        image: navshkh/hadiyaproductsapimain
+
+        ports:
+        - containerPort: 3000
